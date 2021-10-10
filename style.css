@@ -613,14 +613,15 @@ background: linear-gradient(to right, #1CB5E0, #000046);
   background-color: #FF4E00;
 }
 .slider .box5 {
-  background-color: #300050;
+  /*background-color: #300050;*/
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTEtOkONtHhR6bpRLFyxFtnFafVCylaKyy7w&usqp=CAU");
 }
-.slider .box5 .illustration .inner {
+/*.slider .box5 .illustration .inner {
   background-color: #8000FF;
 }
 .slider .box5 .illustration .inner::after, .slider .box5 .illustration .inner::before {
-  background-color: rgba(128, 0, 255, 0.4);
-}
+  background-color: rgba(128, 0, 255, 0.4);*/
+
 .slider .box5 button {
   background-color: #8000FF;
 }
