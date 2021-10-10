@@ -533,8 +533,8 @@ background: linear-gradient(to right, #1CB5E0, #000046);
 .slider .box .details p {
   display: inline-block;
   font-size: 1.3rem;
-  color: #B5B4B4;
-  margin-bottom: 2rem;
+color: white;
+	margin-bottom: 2rem;
   margin-right: 1rem;
 }
 @media only screen and (max-width: 800px) {
