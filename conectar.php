@@ -1,35 +1,23 @@
 <?php
-$servidor="localhost";
-$usuario="root";
-$clave="";
-$baseDeDatos="registro";
-//mysql_select_db("usuario",$db);//
+$name = $_POST['name'];
+$phone = $_POST['phone'];
+$mail = $_POST['mail'];
+$message = $_POST['message'];
 
-$enlace= mysqli_connect($servidor, $usuario, $clave, $baseDeDatos);
+$header = 'From: ' .  $mail . " \r\n";
+$header ="X-Mailer: PHP" . phpversion() . " \r\n";
+$header = "Mime-Version: 1.0  \r\n";
+$header = "Content-Type: text/plain";
 
-if (!$enlace) {
-    echo"Error en la conexion con el servidor";
-}
-?>
+$message = "Este mensaje fue enviado por: " . $name .  " \r\n";
+$message = "Su e-mail es: " . $mail .  " \r\n";
+$message = "Telefono de contacto: " . $phone .  " \r\n";
+$message = "Enviado el: " . date('d/m/y', time());
 
-<?php
-if (isset($_POST["registrarse"])) {
-    $Nombre=$_POST["nom"];
-    $Apellidos=$_POST["apell"];
-    $Correo=$_POST["mail"];
-    $Contraseña=$_POST["pass"];
-    $id=rand(1,99);
+$para = 'ediermedina03@gmail.com';
+$asunto = 'Usuario de My Seven';
 
-    $insertarDatos="INSERT INTO datos VALUES('$Nombre', 
-                                                                            '$Apellidos', 
-                                                                            '$Correo',
-                                                                            '$Contraseña',  
-                                                                            '$id')";
+mail($para, $asunto, utf8_decode($message), $header);
 
-    $ejecutarInsertar=mysqli_query($enlace, $insertarDatos);
-
-    if (!$ejecutarInsertar) {
-        echo"Error en la linea de sql";
-    }
-}
+header("Location: admin.html");
 ?>
